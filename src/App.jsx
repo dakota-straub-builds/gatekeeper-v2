@@ -1,3 +1,5 @@
+import logo from './assets/logo.png'
+
 function App() {
   return (
     <div className="min-h-screen bg-white text-[#0a0f1e]">
@@ -19,11 +21,9 @@ function App() {
 
         {/* Navbar */}
         <nav className="relative z-10 flex items-center justify-between px-8 py-5 border-b border-white/10">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-white/20 backdrop-blur rounded-lg flex items-center justify-center">
-              <span className="text-white text-xs font-bold">G</span>
-            </div>
-            <span className="text-lg font-bold text-white">Gatekeeper</span>
+          <div className="flex items-center gap-3">
+            <img src={logo} alt="Guardstar" className="w-10 h-10 object-contain" />
+            <span className="text-lg font-bold text-white">Guardstar</span>
           </div>
           <div className="flex items-center gap-8">
             <a href="#" className="text-sm text-white/60 hover:text-white transition">Features</a>
@@ -33,7 +33,7 @@ function App() {
           </div>
           <div className="flex items-center gap-4">
             <button className="text-sm text-white/60 hover:text-white transition">Log In</button>
-            <button className="bg-white text-[#1a3a2a] text-sm px-5 py-2.5 rounded-lg transition font-semibold hover:bg-white/90">
+            <button className="bg-[#f0c040] text-[#1a3a2a] text-sm px-5 py-2.5 rounded-lg transition font-semibold hover:bg-[#e6b800]">
               Start Free Trial
             </button>
           </div>
@@ -41,20 +41,20 @@ function App() {
 
         {/* Hero Content */}
         <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 flex-1 py-24">
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur text-white/80 text-xs font-medium px-4 py-1.5 rounded-full mb-8 border border-white/20">
+          <div className="inline-flex items-center gap-2 bg-[#f0c040]/10 backdrop-blur text-[#f0c040] text-xs font-medium px-4 py-1.5 rounded-full mb-8 border border-[#f0c040]/30">
             <span>⭐</span>
             <span>Trusted by 500+ local businesses</span>
           </div>
           <h1 className="text-6xl font-extrabold max-w-3xl leading-tight mb-6 text-white">
             Turn Every Customer Into a{" "}
-            <span className="text-[#52b788]">5-Star Review</span>
+            <span className="text-[#f0c040]">5-Star Review</span>
           </h1>
           <p className="text-white/60 text-lg max-w-2xl mb-10 leading-relaxed">
             Automatically collect reviews, respond with AI, and resolve complaints
             privately — before they become negative reviews. Built for local service businesses.
           </p>
           <div className="flex gap-4 mb-20">
-            <button className="bg-white text-[#1a3a2a] px-7 py-3.5 rounded-lg font-semibold transition flex items-center gap-2 hover:bg-white/90">
+            <button className="bg-[#f0c040] text-[#1a3a2a] px-7 py-3.5 rounded-lg font-semibold transition flex items-center gap-2 hover:bg-[#e6b800]">
               Start Free Trial <span>→</span>
             </button>
             <button className="border border-white/20 text-white px-7 py-3.5 rounded-lg font-medium hover:bg-white/10 transition flex items-center gap-2">
@@ -65,7 +65,7 @@ function App() {
           {/* Stats Row */}
           <div className="flex items-center gap-16 border-t border-white/10 pt-12">
             <div className="text-center">
-              <div className="text-3xl font-bold text-white">4.8★</div>
+              <div className="text-3xl font-bold text-[#f0c040]">4.8★</div>
               <div className="text-sm text-white/40 mt-1">Avg. Rating Boost</div>
             </div>
             <div className="text-center">
@@ -84,13 +84,16 @@ function App() {
         </div>
       </div>
 
-      {/* Dashboard Preview — white card on dark background */}
+      {/* Dashboard Preview */}
       <div className="bg-[#0a1a12] px-8 pb-16">
         <div className="max-w-5xl mx-auto bg-white rounded-2xl p-6 shadow-xl">
           <div className="flex items-center justify-between mb-4">
-            <div>
-              <div className="text-[#0a1a12] font-semibold">Review Dashboard</div>
-              <div className="text-[#2d6a4f] text-sm">Last 30 days performance</div>
+            <div className="flex items-center gap-3">
+              <img src={logo} alt="Guardstar" className="w-8 h-8 object-contain" />
+              <div>
+                <div className="text-[#0a1a12] font-semibold">Review Dashboard</div>
+                <div className="text-[#2d6a4f] text-sm">Last 30 days performance</div>
+              </div>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-[#2d6a4f] rounded-full"></div>
@@ -130,7 +133,7 @@ function App() {
           </div>
           <div className="grid grid-cols-3 gap-8">
             <div className="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition">
-              <div className="w-12 h-12 bg-[#2d6a4f]/10 rounded-xl flex items-center justify-center mb-6">
+              <div className="w-12 h-12 bg-[#f0c040]/10 rounded-xl flex items-center justify-center mb-6">
                 <span className="text-2xl">⭐</span>
               </div>
               <h3 className="text-lg font-bold text-[#0a0f1e] mb-3">Auto Review Requests</h3>
@@ -153,7 +156,7 @@ function App() {
               </div>
               <h3 className="text-lg font-bold text-[#0a0f1e] mb-3">AI Review Responses</h3>
               <p className="text-gray-500 text-sm leading-relaxed">
-                Never leave a review unanswered. GateKeeper drafts professional, personalized responses to every review — you just approve and publish.
+                Never leave a review unanswered. Guardstar drafts professional, personalized responses to every review — you just approve and publish.
               </p>
             </div>
           </div>
@@ -182,8 +185,8 @@ function App() {
             </svg>
             <div className="relative z-10">
               <div className="absolute -top-14 left-1/2 -translate-x-1/2">
-                <div className="bg-[#52b788] text-[#0a1a12] text-xs font-semibold px-4 py-1.5 rounded-full whitespace-nowrap">
-                  🎉 Early Adopter Price — First 50 Customers Only
+                <div className="bg-[#f0c040] text-[#0a1a12] text-xs font-semibold px-4 py-1.5 rounded-full whitespace-nowrap">
+                  🌟 Early Adopter Price — First 50 Customers Only
                 </div>
               </div>
               <div className="mt-4 mb-2">
@@ -206,14 +209,14 @@ function App() {
                   "Priority support",
                 ].map((feature) => (
                   <div key={feature} className="flex items-center gap-3">
-                    <div className="w-5 h-5 bg-[#52b788] rounded-full flex items-center justify-center flex-shrink-0">
+                    <div className="w-5 h-5 bg-[#f0c040] rounded-full flex items-center justify-center flex-shrink-0">
                       <span className="text-[#0a1a12] text-xs font-bold">✓</span>
                     </div>
                     <span className="text-white/80 text-sm">{feature}</span>
                   </div>
                 ))}
               </div>
-              <button className="w-full bg-white text-[#0a1a12] py-4 rounded-xl font-semibold text-lg transition hover:bg-white/90">
+              <button className="w-full bg-[#f0c040] text-[#0a1a12] py-4 rounded-xl font-semibold text-lg transition hover:bg-[#e6b800]">
                 Start Free Trial →
               </button>
               <p className="text-white/30 text-xs mt-4">14-day free trial. No credit card required.</p>
@@ -225,13 +228,11 @@ function App() {
       {/* Footer */}
       <div className="bg-gray-50 border-t border-gray-100 py-10 px-8">
         <div className="max-w-5xl mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="w-7 h-7 bg-[#2d6a4f] rounded-lg flex items-center justify-center">
-              <span className="text-white text-xs font-bold">G</span>
-            </div>
-            <span className="font-bold text-[#0a0f1e]">Gatekeeper</span>
+          <div className="flex items-center gap-3">
+            <img src={logo} alt="Guardstar" className="w-8 h-8 object-contain" />
+            <span className="font-bold text-[#0a0f1e]">Guardstar</span>
           </div>
-          <p className="text-gray-400 text-sm">© 2026 GateKeeper. All rights reserved.</p>
+          <p className="text-gray-400 text-sm">© 2026 Guardstar. All rights reserved.</p>
           <div className="flex items-center gap-6">
             <a href="#" className="text-sm text-gray-400 hover:text-[#0a0f1e] transition">Privacy</a>
             <a href="#" className="text-sm text-gray-400 hover:text-[#0a0f1e] transition">Terms</a>

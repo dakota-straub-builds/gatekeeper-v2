@@ -1,6 +1,9 @@
+import { useNavigate } from 'react-router-dom'
 import logo from './assets/logo.png'
 
 function App() {
+  const navigate = useNavigate()
+
   return (
     <div className="min-h-screen bg-white text-[#0a0f1e]">
 
@@ -26,14 +29,20 @@ function App() {
             <span className="text-lg font-bold text-white">Guardstar</span>
           </div>
           <div className="flex items-center gap-8">
-            <a href="#" className="text-sm text-white/60 hover:text-white transition">Features</a>
-            <a href="#" className="text-sm text-white/60 hover:text-white transition">How It Works</a>
-            <a href="#" className="text-sm text-white/60 hover:text-white transition">Industries</a>
-            <a href="#" className="text-sm text-white/60 hover:text-white transition">Pricing</a>
+            <a href="#features" className="text-sm text-white/60 hover:text-white transition">Features</a>
+            <a href="#howitworks" className="text-sm text-white/60 hover:text-white transition">How It Works</a>
+            <a href="#industries" className="text-sm text-white/60 hover:text-white transition">Industries</a>
+            <a href="#pricing" className="text-sm text-white/60 hover:text-white transition">Pricing</a>
           </div>
           <div className="flex items-center gap-4">
-            <button className="text-sm text-white/60 hover:text-white transition">Log In</button>
-            <button className="bg-[#f0c040] text-[#1a3a2a] text-sm px-5 py-2.5 rounded-lg transition font-semibold hover:bg-[#e6b800]">
+            <button
+              onClick={() => navigate('/login')}
+              className="text-sm text-white/60 hover:text-white transition">
+              Log In
+            </button>
+            <button
+              onClick={() => navigate('/signup')}
+              className="bg-[#f0c040] text-[#1a3a2a] text-sm px-5 py-2.5 rounded-lg transition font-semibold hover:bg-[#e6b800]">
               Start Free Trial
             </button>
           </div>
@@ -54,7 +63,9 @@ function App() {
             privately — before they become negative reviews. Built for local service businesses.
           </p>
           <div className="flex gap-4 mb-20">
-            <button className="bg-[#f0c040] text-[#1a3a2a] px-7 py-3.5 rounded-lg font-semibold transition flex items-center gap-2 hover:bg-[#e6b800]">
+            <button
+              onClick={() => navigate('/signup')}
+              className="bg-[#f0c040] text-[#1a3a2a] px-7 py-3.5 rounded-lg font-semibold transition flex items-center gap-2 hover:bg-[#e6b800]">
               Start Free Trial <span>→</span>
             </button>
             <button className="border border-white/20 text-white px-7 py-3.5 rounded-lg font-medium hover:bg-white/10 transition flex items-center gap-2">
@@ -121,7 +132,7 @@ function App() {
       </div>
 
       {/* Features Section */}
-      <div className="py-24 px-6 bg-gray-50">
+      <div id="features" className="py-24 px-6 bg-gray-50">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-[#0a0f1e] mb-4">
@@ -164,7 +175,7 @@ function App() {
       </div>
 
       {/* Pricing Section */}
-      <div className="py-24 px-6 bg-white">
+      <div id="pricing" className="py-24 px-6 bg-white">
         <div className="max-w-lg mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-[#0a0f1e] mb-4">
@@ -216,7 +227,9 @@ function App() {
                   </div>
                 ))}
               </div>
-              <button className="w-full bg-[#f0c040] text-[#0a1a12] py-4 rounded-xl font-semibold text-lg transition hover:bg-[#e6b800]">
+              <button
+                onClick={() => navigate('/signup')}
+                className="w-full bg-[#f0c040] text-[#0a1a12] py-4 rounded-xl font-semibold text-lg transition hover:bg-[#e6b800]">
                 Start Free Trial →
               </button>
               <p className="text-white/30 text-xs mt-4">14-day free trial. No credit card required.</p>
@@ -229,7 +242,7 @@ function App() {
       <div className="bg-gray-50 border-t border-gray-100 py-10 px-8">
         <div className="max-w-5xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <img src={logo} alt="Guardstar" className="w-8 h-8 object-contain" />
+            <img src={logo} alt="Guardstar" className="w-7 h-7 object-contain" />
             <span className="font-bold text-[#0a0f1e]">Guardstar</span>
           </div>
           <p className="text-gray-400 text-sm">© 2026 Guardstar. All rights reserved.</p>

@@ -1,12 +1,14 @@
 import { useState } from 'react'
 import { supabase } from './supabase'
 import logo from './assets/logo.png'
+import { useNavigate } from 'react-router-dom'
 
 export default function Login() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
+  const navigate = useNavigate()
 
   const handleLogin = async (e) => {
     e.preventDefault()
@@ -14,6 +16,7 @@ export default function Login() {
     setError(null)
     const { error } = await supabase.auth.signInWithPassword({ email, password })
     if (error) setError(error.message)
+    else navigate('/dashboard')
     setLoading(false)
   }
 
@@ -59,8 +62,7 @@ export default function Login() {
             <button
               onClick={handleLogin}
               disabled={loading}
-              className="w-full bg-[#f0c040] hover:bg-[#e6b800] text-[#0a1a12] py-3 rounded-lg font-semibold transition disabled:opacity-50"
-            >
+              className="w-full bg-[#f0c040] hover:bg-[#e6b800] text-[#0a1a12] py-3 rounded-lg font-semibold transition disabled:opacity-50">
               {loading ? 'Signing in...' : 'Sign In'}
             </button>
           </div>

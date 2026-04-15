@@ -5,269 +5,313 @@ function App() {
   const navigate = useNavigate()
 
   return (
-    <div className="min-h-screen bg-white text-[#0a0f1e]">
+    <div className="min-h-screen text-white" style={{ fontFamily: "'Inter', sans-serif", background: '#0d1117' }}>
 
-      {/* DARK HERO SECTION */}
-      <div className="relative min-h-screen flex flex-col overflow-hidden"
-        style={{
-          background: 'radial-gradient(ellipse at 20% 50%, #2d6a4f 0%, #1a3a2a 40%, #0a1a12 100%)',
-        }}>
-
-        {/* Flowing SVG curves */}
-        <svg className="absolute inset-0 w-full h-full opacity-20" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-          <path d="M-100,300 C200,100 400,500 700,200 C1000,-100 1200,400 1600,300" stroke="#52b788" strokeWidth="2" fill="none"/>
-          <path d="M-100,500 C300,300 500,700 800,400 C1100,100 1300,600 1700,500" stroke="#52b788" strokeWidth="1.5" fill="none"/>
-          <path d="M-100,700 C200,500 600,900 900,600 C1200,300 1400,800 1700,700" stroke="#52b788" strokeWidth="1" fill="none"/>
-          <ellipse cx="1100" cy="200" rx="400" ry="300" fill="#2d6a4f" opacity="0.15"/>
-          <ellipse cx="200" cy="700" rx="300" ry="200" fill="#2d6a4f" opacity="0.1"/>
-        </svg>
-
-        {/* Navbar */}
-        <nav className="relative z-10 flex items-center justify-between px-6 py-5 border-b border-white/10">
-          <div className="flex items-center gap-3">
-            <img src={logo} alt="Guardstar" className="w-8 h-8 object-contain" />
-            <span className="text-lg font-bold text-white">Guardstar</span>
-          </div>
-          {/* Desktop nav links */}
-          <div className="hidden md:flex items-center gap-8">
-            <a href="#features" className="text-sm text-white/60 hover:text-white transition">Features</a>
-            <a href="#howitworks" className="text-sm text-white/60 hover:text-white transition">How It Works</a>
-            <a href="#industries" className="text-sm text-white/60 hover:text-white transition">Industries</a>
-            <a href="#pricing" className="text-sm text-white/60 hover:text-white transition">Pricing</a>
-          </div>
-          {/* Desktop buttons */}
-          <div className="hidden md:flex items-center gap-4">
-            <button
-              onClick={() => navigate('/login')}
-              className="text-sm text-white/60 hover:text-white transition">
-              Log In
-            </button>
-            <button
-              onClick={() => navigate('/signup')}
-              className="bg-[#f0c040] text-[#1a3a2a] text-sm px-5 py-2.5 rounded-lg transition font-semibold hover:bg-[#e6b800]">
-              Start Free Trial
-            </button>
-          </div>
-          {/* Mobile buttons */}
-          <div className="flex md:hidden items-center gap-3">
-            <button
-              onClick={() => navigate('/login')}
-              className="text-sm text-white/60 hover:text-white transition">
-              Log In
-            </button>
-            <button
-              onClick={() => navigate('/signup')}
-              className="bg-[#f0c040] text-[#1a3a2a] text-xs px-4 py-2 rounded-lg transition font-semibold hover:bg-[#e6b800]">
-              Try Free
-            </button>
-          </div>
-        </nav>
-
-        {/* Hero Content */}
-        <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 flex-1 py-16 md:py-24">
-          <div className="inline-flex items-center gap-2 bg-[#f0c040]/10 backdrop-blur text-[#f0c040] text-xs font-medium px-4 py-1.5 rounded-full mb-8 border border-[#f0c040]/30">
-            <span>⭐</span>
-            <span>Trusted by 500+ local businesses</span>
-          </div>
-          <h1 className="text-4xl md:text-6xl font-extrabold max-w-3xl leading-tight mb-6 text-white">
-            Turn Every Customer Into a{" "}
-            <span className="text-[#f0c040]">5-Star Review</span>
-          </h1>
-          <p className="text-white/60 text-base md:text-lg max-w-2xl mb-10 leading-relaxed">
-            Automatically collect reviews, respond with AI, and resolve complaints
-            privately — before they become negative reviews. Built for local service businesses.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 mb-16 md:mb-20 w-full sm:w-auto">
-            <button
-              onClick={() => navigate('/signup')}
-              className="bg-[#f0c040] text-[#1a3a2a] px-7 py-3.5 rounded-lg font-semibold transition flex items-center justify-center gap-2 hover:bg-[#e6b800]">
-              Start Free Trial <span>→</span>
-            </button>
-            <button className="border border-white/20 text-white px-7 py-3.5 rounded-lg font-medium hover:bg-white/10 transition flex items-center justify-center gap-2">
-              <span>▷</span> Watch Demo
-            </button>
-          </div>
-
-          {/* Stats Row */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-16 border-t border-white/10 pt-12 w-full max-w-2xl">
-            <div className="text-center">
-              <div className="text-2xl md:text-3xl font-bold text-[#f0c040]">4.8★</div>
-              <div className="text-xs md:text-sm text-white/40 mt-1">Avg. Rating Boost</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl md:text-3xl font-bold text-white">73%</div>
-              <div className="text-xs md:text-sm text-white/40 mt-1">More Reviews</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl md:text-3xl font-bold text-white">89%</div>
-              <div className="text-xs md:text-sm text-white/40 mt-1">Issues Resolved</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl md:text-3xl font-bold text-white">2hrs</div>
-              <div className="text-xs md:text-sm text-white/40 mt-1">Avg. Response Time</div>
-            </div>
-          </div>
+      {/* NAVBAR */}
+      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-5"
+        style={{ background: 'rgba(13,17,23,0.8)', backdropFilter: 'blur(12px)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+        <div className="flex items-center gap-3">
+          <img src={logo} alt="Guardstar" className="w-8 h-8 object-contain" />
+          <span className="text-white font-semibold text-lg tracking-tight">Guardstar</span>
         </div>
-      </div>
-
-      {/* Dashboard Preview */}
-      <div className="bg-[#0a1a12] px-4 md:px-8 pb-16">
-        <div className="max-w-5xl mx-auto bg-white rounded-2xl p-4 md:p-6 shadow-xl">
-          <div className="flex items-center justify-between mb-4">
-            <div className="flex items-center gap-3">
-              <img src={logo} alt="Guardstar" className="w-8 h-8 object-contain" />
-              <div>
-                <div className="text-[#0a1a12] font-semibold text-sm md:text-base">Review Dashboard</div>
-                <div className="text-[#2d6a4f] text-xs md:text-sm">Last 30 days performance</div>
-              </div>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-[#2d6a4f] rounded-full"></div>
-              <span className="text-[#2d6a4f] text-sm font-medium">Live</span>
-            </div>
-          </div>
-          <div className="grid grid-cols-3 gap-2 md:gap-4">
-            <div className="bg-[#f0faf5] border border-[#2d6a4f]/20 rounded-xl p-3 md:p-4">
-              <div className="text-[#2d6a4f] text-xs mb-1 font-medium">Avg Rating</div>
-              <div className="text-[#0a1a12] text-lg md:text-2xl font-bold">4.8 ⭐</div>
-              <div className="text-[#2d6a4f] text-xs mt-1 font-medium hidden md:block">↑ +0.3 this month</div>
-            </div>
-            <div className="bg-[#f0faf5] border border-[#2d6a4f]/20 rounded-xl p-3 md:p-4">
-              <div className="text-[#2d6a4f] text-xs mb-1 font-medium">Reviews</div>
-              <div className="text-[#0a1a12] text-lg md:text-2xl font-bold">247</div>
-              <div className="text-[#2d6a4f] text-xs mt-1 font-medium hidden md:block">↑ +23 this month</div>
-            </div>
-            <div className="bg-[#f0faf5] border border-[#2d6a4f]/20 rounded-xl p-3 md:p-4">
-              <div className="text-[#2d6a4f] text-xs mb-1 font-medium">Resolved</div>
-              <div className="text-[#0a1a12] text-lg md:text-2xl font-bold">89%</div>
-              <div className="text-[#2d6a4f] text-xs mt-1 font-medium hidden md:block">↑ +12% this month</div>
-            </div>
-          </div>
+        <div className="hidden md:flex items-center gap-8">
+          <a href="#features" className="text-sm text-white/50 hover:text-white transition">Features</a>
+          <a href="#howitworks" className="text-sm text-white/50 hover:text-white transition">How It Works</a>
+          <a href="#pricing" className="text-sm text-white/50 hover:text-white transition">Pricing</a>
         </div>
-      </div>
-
-      {/* Features Section */}
-      <div id="features" className="py-16 md:py-24 px-6 bg-gray-50">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0a0f1e] mb-4">
-              Everything you need to dominate your market
-            </h2>
-            <p className="text-gray-500 text-base md:text-lg max-w-xl mx-auto">
-              Three powerful tools working together to protect and grow your online reputation.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-            <div className="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition">
-              <div className="w-12 h-12 bg-[#f0c040]/10 rounded-xl flex items-center justify-center mb-6">
-                <span className="text-2xl">⭐</span>
-              </div>
-              <h3 className="text-lg font-bold text-[#0a0f1e] mb-3">Auto Review Requests</h3>
-              <p className="text-gray-500 text-sm leading-relaxed">
-                Automatically send review requests via email after every job. Strike while the iron is hot and turn happy customers into 5-star reviews.
-              </p>
-            </div>
-            <div className="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition">
-              <div className="w-12 h-12 bg-[#2d6a4f]/10 rounded-xl flex items-center justify-center mb-6">
-                <span className="text-2xl">🛡️</span>
-              </div>
-              <h3 className="text-lg font-bold text-[#0a0f1e] mb-3">Sentiment Intercept</h3>
-              <p className="text-gray-500 text-sm leading-relaxed">
-                Catch unhappy customers before they go public. Our smart intercept flow routes negative feedback to a private resolution queue instead of Google.
-              </p>
-            </div>
-            <div className="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition">
-              <div className="w-12 h-12 bg-[#2d6a4f]/10 rounded-xl flex items-center justify-center mb-6">
-                <span className="text-2xl">🤖</span>
-              </div>
-              <h3 className="text-lg font-bold text-[#0a0f1e] mb-3">AI Review Responses</h3>
-              <p className="text-gray-500 text-sm leading-relaxed">
-                Never leave a review unanswered. Guardstar drafts professional, personalized responses to every review — you just approve and publish.
-              </p>
-            </div>
-          </div>
+        <div className="flex items-center gap-5">
+          <button onClick={() => navigate('/login')} className="text-sm text-white/50 hover:text-white transition">
+            Log in
+          </button>
+          <button
+            onClick={() => navigate('/signup')}
+            className="text-sm px-4 py-2 rounded-lg font-medium transition"
+            style={{ background: 'linear-gradient(135deg, #2563eb, #1d4ed8)', color: 'white', boxShadow: '0 0 20px rgba(37,99,235,0.3)' }}>
+            Get started
+          </button>
         </div>
-      </div>
+      </nav>
 
-      {/* Pricing Section */}
-      <div id="pricing" className="py-16 md:py-24 px-6 bg-white">
-        <div className="max-w-lg mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0a0f1e] mb-4">
-              Simple, honest pricing
-            </h2>
-            <p className="text-gray-500 text-lg">
-              One plan. Everything included. No surprises.
-            </p>
-          </div>
-          <div className="relative rounded-3xl p-8 md:p-10 text-center shadow-2xl overflow-hidden"
+      {/* HERO */}
+      <section className="relative flex flex-col items-center text-center px-6 pt-40 pb-0 overflow-hidden">
+        {/* Background glows */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full opacity-25"
+            style={{ background: 'radial-gradient(ellipse, #2563eb 0%, transparent 70%)', filter: 'blur(80px)' }} />
+          <div className="absolute top-1/3 left-1/3 w-[300px] h-[300px] rounded-full opacity-10"
+            style={{ background: 'radial-gradient(circle, #f5c518 0%, transparent 70%)', filter: 'blur(60px)' }} />
+        </div>
+
+        {/* Badge */}
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-6 text-xs font-medium"
+          style={{ background: 'rgba(37,99,235,0.12)', border: '1px solid rgba(37,99,235,0.25)', color: '#60a5fa' }}>
+          ⭐ Trusted by 500+ local businesses
+        </div>
+
+        {/* Headline */}
+        <h1 className="text-5xl md:text-7xl font-bold max-w-4xl leading-tight tracking-tight mb-6">
+          Your reputation,{' '}
+          <span style={{ background: 'linear-gradient(135deg, #3b82f6, #60a5fa)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+            protected
+          </span>{' '}
+          and{' '}
+          <span style={{ background: 'linear-gradient(135deg, #f5c518, #fbbf24)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+            growing.
+          </span>
+        </h1>
+
+        <p className="text-white/50 text-lg md:text-xl max-w-2xl mb-10 leading-relaxed">
+          Automatically collect reviews, respond with AI, and resolve complaints privately — before they go public. Built for local service businesses.
+        </p>
+
+        <div className="flex flex-col sm:flex-row gap-4 mb-16">
+          <button
+            onClick={() => navigate('/signup')}
+            className="px-8 py-3.5 rounded-lg font-semibold text-sm transition"
+            style={{ background: 'linear-gradient(135deg, #2563eb, #1d4ed8)', boxShadow: '0 0 30px rgba(37,99,235,0.4)' }}>
+            Start free trial →
+          </button>
+          <button className="px-8 py-3.5 rounded-lg font-medium text-sm text-white/60 hover:text-white transition"
+            style={{ border: '1px solid rgba(255,255,255,0.1)', background: 'rgba(255,255,255,0.03)' }}>
+            ▷ Watch demo
+          </button>
+        </div>
+
+        {/* FLOATING DASHBOARD PREVIEW */}
+        <div className="relative w-full max-w-5xl mx-auto"
+          style={{ perspective: '1200px' }}>
+          <div className="w-full rounded-2xl overflow-hidden"
             style={{
-              background: 'radial-gradient(ellipse at 30% 20%, #2d6a4f 0%, #0a1a12 70%)',
+              transform: 'rotateX(8deg) scale(0.97)',
+              transformOrigin: 'top center',
+              border: '1px solid rgba(255,255,255,0.1)',
+              background: '#161b22',
+              boxShadow: '0 40px 120px rgba(0,0,0,0.6), 0 0 60px rgba(37,99,235,0.15)',
             }}>
-            <svg className="absolute inset-0 w-full h-full opacity-20" viewBox="0 0 500 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-              <path d="M-50,150 C100,50 200,250 350,100 C500,-50 600,200 700,150" stroke="#52b788" strokeWidth="1.5" fill="none"/>
-              <path d="M-50,350 C150,250 250,450 400,300 C550,150 650,400 750,350" stroke="#52b788" strokeWidth="1" fill="none"/>
-              <ellipse cx="400" cy="100" rx="200" ry="150" fill="#2d6a4f" opacity="0.2"/>
-            </svg>
-            <div className="relative z-10">
-              <div className="absolute -top-14 left-1/2 -translate-x-1/2">
-                <div className="bg-[#f0c040] text-[#0a1a12] text-xs font-semibold px-4 py-1.5 rounded-full whitespace-nowrap">
-                  🌟 Early Adopter Price — First 50 Customers Only
+            {/* Browser chrome */}
+            <div className="px-4 py-3 flex items-center gap-2" style={{ background: '#1c2128', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+              <div className="w-3 h-3 rounded-full" style={{ background: '#ff5f57' }} />
+              <div className="w-3 h-3 rounded-full" style={{ background: '#febc2e' }} />
+              <div className="w-3 h-3 rounded-full" style={{ background: '#28c840' }} />
+              <div className="flex-1 mx-4">
+                <div className="mx-auto max-w-xs rounded-md px-3 py-1 text-xs text-center" style={{ background: 'rgba(255,255,255,0.05)', color: 'rgba(255,255,255,0.3)' }}>
+                  guardstarapp.com/dashboard
                 </div>
               </div>
-              <div className="mt-4 mb-2">
-                <span className="text-white/40 line-through text-lg">$49/mo</span>
-              </div>
-              <div className="flex items-end justify-center gap-2 mb-2">
-                <span className="text-5xl md:text-6xl font-extrabold text-white">$24.99</span>
-                <span className="text-white/40 mb-3">/month</span>
-              </div>
-              <p className="text-white/40 text-sm mb-8">Cancel anytime. No contracts.</p>
-              <div className="text-left space-y-4 mb-10">
-                {[
-                  "Unlimited review request campaigns",
-                  "Email delivery",
-                  "Sentiment intercept flow",
-                  "Private resolution queue",
-                  "AI-generated review responses",
-                  "Google Business Profile sync",
-                  "Real-time dashboard & analytics",
-                  "Priority support",
-                ].map((feature) => (
-                  <div key={feature} className="flex items-center gap-3">
-                    <div className="w-5 h-5 bg-[#f0c040] rounded-full flex items-center justify-center flex-shrink-0">
-                      <span className="text-[#0a1a12] text-xs font-bold">✓</span>
-                    </div>
-                    <span className="text-white/80 text-sm">{feature}</span>
+            </div>
+
+            {/* Dashboard content */}
+            <div className="flex" style={{ minHeight: '420px' }}>
+              {/* Sidebar */}
+              <div className="w-48 flex-shrink-0 p-4" style={{ background: '#161b22', borderRight: '1px solid rgba(255,255,255,0.06)' }}>
+                <div className="flex items-center gap-2 mb-6">
+                  <img src={logo} alt="" className="w-5 h-5 object-contain" />
+                  <span className="text-xs font-semibold text-white">Guardstar</span>
+                </div>
+                {['📊 Dashboard', '⭐ Reviews', '🤖 AI Responses', '📧 Campaigns', '⚙️ Settings'].map((item, i) => (
+                  <div key={item} className="px-3 py-2 rounded-lg text-xs mb-1 cursor-pointer"
+                    style={{ background: i === 0 ? 'rgba(37,99,235,0.2)' : 'transparent', color: i === 0 ? '#60a5fa' : 'rgba(255,255,255,0.4)' }}>
+                    {item}
                   </div>
                 ))}
               </div>
-              <button
-                onClick={() => navigate('/signup')}
-                className="w-full bg-[#f0c040] text-[#0a1a12] py-4 rounded-xl font-semibold text-lg transition hover:bg-[#e6b800]">
-                Start Free Trial →
-              </button>
-              <p className="text-white/30 text-xs mt-4">14-day free trial. No credit card required.</p>
+
+              {/* Main content */}
+              <div className="flex-1 p-6">
+                <div className="mb-5">
+                  <div className="text-base font-semibold text-white mb-1">Dashboard</div>
+                  <div className="text-xs" style={{ color: 'rgba(255,255,255,0.3)' }}>Monitor your reputation in real-time</div>
+                </div>
+
+                {/* Stats row */}
+                <div className="grid grid-cols-4 gap-3 mb-5">
+                  {[
+                    { label: 'Avg Rating', value: '4.8★', color: '#f5c518' },
+                    { label: 'Total Reviews', value: '247', color: '#60a5fa' },
+                    { label: 'Response Rate', value: '98%', color: '#60a5fa' },
+                    { label: 'Pending', value: '3', color: '#f87171' },
+                  ].map((s) => (
+                    <div key={s.label} className="rounded-xl p-3" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}>
+                      <div className="text-xs mb-1" style={{ color: 'rgba(255,255,255,0.3)' }}>{s.label}</div>
+                      <div className="text-lg font-bold" style={{ color: s.color }}>{s.value}</div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Two columns */}
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="rounded-xl p-4" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}>
+                    <div className="text-xs font-semibold text-white mb-3">🤖 AI Response Queue</div>
+                    {[{ name: 'Sarah M.', stars: 5 }, { name: 'John D.', stars: 4 }].map((r) => (
+                      <div key={r.name} className="mb-3 pb-3" style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+                        <div className="flex items-center justify-between mb-1">
+                          <span className="text-xs text-white">{r.name}</span>
+                          <span className="text-xs" style={{ color: '#f5c518' }}>{'★'.repeat(r.stars)}</span>
+                        </div>
+                        <div className="rounded-lg px-2 py-1.5 text-xs" style={{ background: 'rgba(37,99,235,0.1)', color: 'rgba(255,255,255,0.5)' }}>
+                          🤖 AI response ready...
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="rounded-xl p-4" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}>
+                    <div className="text-xs font-semibold text-white mb-3">🛡️ Customer Feedback</div>
+                    {[
+                      { name: 'Tom Wilson', status: 'High Priority', color: '#f87171' },
+                      { name: 'Lisa Chen', status: 'In Progress', color: '#fbbf24' },
+                      { name: 'Robert Kim', status: 'Resolved', color: '#34d399' },
+                    ].map((r) => (
+                      <div key={r.name} className="flex items-center justify-between mb-2">
+                        <span className="text-xs text-white/60">{r.name}</span>
+                        <span className="text-xs px-2 py-0.5 rounded-full" style={{ background: `${r.color}20`, color: r.color }}>{r.status}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
 
-      {/* Footer */}
-      <div className="bg-gray-50 border-t border-gray-100 py-10 px-6 md:px-8">
+          {/* Fade bottom */}
+          <div className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
+            style={{ background: 'linear-gradient(to bottom, transparent, #0d1117)' }} />
+        </div>
+      </section>
+
+      {/* STATS */}
+      <section className="px-6 py-16 flex justify-center">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-12 w-full max-w-2xl pt-8" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+          {[
+            { value: '4.8★', label: 'Avg. Rating Boost', color: '#f5c518' },
+            { value: '73%', label: 'More Reviews', color: '#60a5fa' },
+            { value: '89%', label: 'Issues Resolved', color: '#60a5fa' },
+            { value: '2hrs', label: 'Avg. Response Time', color: '#60a5fa' },
+          ].map((stat) => (
+            <div key={stat.label} className="text-center">
+              <div className="text-2xl md:text-3xl font-bold mb-1" style={{ color: stat.color }}>{stat.value}</div>
+              <div className="text-xs text-white/30">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* FEATURES */}
+      <section id="features" className="px-6 py-24 max-w-5xl mx-auto">
+        <div className="text-center mb-16">
+          <div className="text-xs font-semibold tracking-widest uppercase mb-4" style={{ color: '#2563eb' }}>Features</div>
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">Everything you need to dominate<br />your local market</h2>
+          <p className="text-white/40 text-lg max-w-xl mx-auto">Three powerful tools working together to protect and grow your online reputation.</p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {[
+            { icon: '⭐', title: 'Auto Review Requests', desc: 'Automatically send review requests after every job. Strike while the iron is hot and turn happy customers into 5-star reviews.' },
+            { icon: '🛡️', title: 'Sentiment Intercept', desc: 'Catch unhappy customers before they go public. Route negative feedback to a private resolution queue instead of Google.' },
+            { icon: '🤖', title: 'AI Review Responses', desc: 'Never leave a review unanswered. Guardstar drafts professional responses to every review — you just approve and publish.' },
+          ].map((f) => (
+            <div key={f.title} className="rounded-2xl p-8 transition"
+              style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)' }}>
+              <div className="text-3xl mb-5">{f.icon}</div>
+              <h3 className="text-lg font-semibold text-white mb-3">{f.title}</h3>
+              <p className="text-white/40 text-sm leading-relaxed">{f.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* HOW IT WORKS */}
+      <section id="howitworks" className="px-6 py-24" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-16">
+            <div className="text-xs font-semibold tracking-widest uppercase mb-4" style={{ color: '#2563eb' }}>How It Works</div>
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Set up in minutes.<br />Results in days.</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { step: '01', title: 'Connect your Google Business Profile', desc: 'Link your GBP in one click. We sync your reviews automatically.' },
+              { step: '02', title: 'Send review requests automatically', desc: 'After every job, Guardstar sends a personalized review request to your customer.' },
+              { step: '03', title: 'AI responds, you approve', desc: 'Get AI-drafted responses for every review. Approve with one click or edit before publishing.' },
+            ].map((s) => (
+              <div key={s.step}>
+                <div className="text-6xl font-bold mb-4" style={{ color: 'rgba(37,99,235,0.2)' }}>{s.step}</div>
+                <h3 className="text-lg font-semibold text-white mb-2">{s.title}</h3>
+                <p className="text-white/40 text-sm leading-relaxed">{s.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* PRICING */}
+      <section id="pricing" className="px-6 py-24" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+        <div className="max-w-lg mx-auto text-center">
+          <div className="text-xs font-semibold tracking-widest uppercase mb-4" style={{ color: '#2563eb' }}>Pricing</div>
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">Simple, honest pricing.</h2>
+          <p className="text-white/40 mb-12">One plan. Everything included. No surprises.</p>
+          <div className="rounded-2xl p-10 text-left relative overflow-hidden"
+            style={{ background: 'linear-gradient(135deg, rgba(37,99,235,0.12) 0%, rgba(13,17,23,0) 100%)', border: '1px solid rgba(37,99,235,0.25)', boxShadow: '0 0 60px rgba(37,99,235,0.08)' }}>
+            <div className="absolute top-0 right-0 px-4 py-1.5 text-xs font-semibold rounded-bl-xl"
+              style={{ background: 'rgba(245,197,24,0.12)', color: '#f5c518', border: '1px solid rgba(245,197,24,0.2)' }}>
+              🌟 Early Adopter — First 50 only
+            </div>
+            <div className="mb-2"><span className="text-white/30 line-through text-lg">$49/mo</span></div>
+            <div className="flex items-end gap-2 mb-1">
+              <span className="text-6xl font-bold text-white">$24.99</span>
+              <span className="text-white/30 mb-3">/month</span>
+            </div>
+            <p className="text-white/30 text-sm mb-8">Cancel anytime. No contracts.</p>
+            <div className="space-y-3 mb-10">
+              {['Unlimited review request campaigns', 'Email delivery', 'Sentiment intercept flow', 'Private resolution queue', 'AI-generated review responses', 'Google Business Profile sync', 'Real-time dashboard & analytics', 'Priority support'].map((f) => (
+                <div key={f} className="flex items-center gap-3">
+                  <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
+                    style={{ background: 'rgba(245,197,24,0.15)', border: '1px solid rgba(245,197,24,0.25)' }}>
+                    <span className="text-xs" style={{ color: '#f5c518' }}>✓</span>
+                  </div>
+                  <span className="text-white/70 text-sm">{f}</span>
+                </div>
+              ))}
+            </div>
+            <button onClick={() => navigate('/signup')} className="w-full py-4 rounded-xl font-semibold text-sm transition"
+              style={{ background: 'linear-gradient(135deg, #2563eb, #1d4ed8)', boxShadow: '0 0 30px rgba(37,99,235,0.35)' }}>
+              Start Free Trial →
+            </button>
+            <p className="text-white/20 text-xs mt-4 text-center">14-day free trial. No credit card required.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="px-6 py-24 text-center" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+        <div className="max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">Built for the future.<br />Available today.</h2>
+          <p className="text-white/40 mb-8">Join 500+ local businesses already protecting their reputation with Guardstar.</p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button onClick={() => navigate('/signup')} className="px-8 py-3.5 rounded-lg font-semibold text-sm"
+              style={{ background: 'linear-gradient(135deg, #2563eb, #1d4ed8)', boxShadow: '0 0 30px rgba(37,99,235,0.4)' }}>
+              Get started free →
+            </button>
+            <button onClick={() => navigate('/login')} className="px-8 py-3.5 rounded-lg font-medium text-sm text-white/60 hover:text-white transition"
+              style={{ border: '1px solid rgba(255,255,255,0.1)' }}>
+              Log in
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="px-8 py-10" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <img src={logo} alt="Guardstar" className="w-7 h-7 object-contain" />
-            <span className="font-bold text-[#0a0f1e]">Guardstar</span>
+            <span className="font-semibold text-white">Guardstar</span>
           </div>
-          <p className="text-gray-400 text-sm">© 2026 Guardstar. All rights reserved.</p>
+          <p className="text-white/20 text-sm">© 2026 Guardstar. All rights reserved.</p>
           <div className="flex items-center gap-6">
-            <a href="#" className="text-sm text-gray-400 hover:text-[#0a0f1e] transition">Privacy</a>
-            <a href="#" className="text-sm text-gray-400 hover:text-[#0a0f1e] transition">Terms</a>
-            <a href="#" className="text-sm text-gray-400 hover:text-[#0a0f1e] transition">Contact</a>
+            <a href="#" className="text-sm text-white/30 hover:text-white transition">Privacy</a>
+            <a href="#" className="text-sm text-white/30 hover:text-white transition">Terms</a>
+            <a href="#" className="text-sm text-white/30 hover:text-white transition">Contact</a>
           </div>
         </div>
-      </div>
+      </footer>
 
     </div>
   )

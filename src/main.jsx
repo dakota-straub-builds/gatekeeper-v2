@@ -6,6 +6,7 @@ import App from './App.jsx'
 import Login from './Login.jsx'
 import Signup from './Signup.jsx'
 import Dashboard from './Dashboard.jsx'
+import GoogleCallback from './pages/GoogleCallback.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -15,6 +16,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/api/google-callback" element={<GoogleCallback />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,
